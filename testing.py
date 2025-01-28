@@ -1,8 +1,8 @@
 import joblib
 
 # Load the trained model and vectorizer
-model = joblib.load('sentiment_model.pkl')
-vectorizer = joblib.load('vectorizer.pkl')
+model = joblib.load('optimized_sentiment_model.pkl')
+vectorizer = joblib.load('optimized_vectorizer.pkl')
 
 # Define a text cleaning function (reuse from main.py)
 import re
@@ -24,5 +24,5 @@ def predict_sentiment(text):
     return "Positive" if prediction == 1 else "Negative"
 
 # Test the model
-print(predict_sentiment("I love this movie!"))  # Example 1
-print(predict_sentiment("This is the worst experience ever."))  # Example 2
+print(predict_sentiment("I hate this movie"))  # Example 1
+print(predict_sentiment("This is the best experience ever."))  # Example 2
